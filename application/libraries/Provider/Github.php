@@ -27,7 +27,8 @@ class OAuth2_Provider_Github extends OAuth2_Provider
 			'access_token' => $token->access_token,
 		));
 
-		$user = json_decode(file_get_contents($url));
+		//$user = json_decode(file_get_contents($url));
+		$user = $this->curl_to_json($url);
 
 		// Create a response from the request
 		return array(
@@ -41,4 +42,21 @@ class OAuth2_Provider_Github extends OAuth2_Provider
 			),
 		);
 	}
+	
+	public function curl_to_json($url) {
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+		curl_setopt($ch, CURLOPT_USERAGENT, 'databeam.org');
+		
+		$data=curl_exec($ch);
+		curl_close($ch);
+
+
+		return json_decode($data, false);	
+
+	}	
+	
 }
