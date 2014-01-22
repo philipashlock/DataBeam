@@ -77,10 +77,6 @@ include 'header_inc_view.php';?>
     </div>
 
 
-</div>
-
-
-
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
@@ -144,11 +140,11 @@ include 'header_inc_view.php';?>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="/assets/js/vendor/jquery.ui.widget.js"></script>
 <!-- The Templates plugin is included to render the upload/download listings -->
-<script src="http://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
+<script src="/assets/js/blueimp/tmpl.min.js"></script>
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+<script src="/assets/js/blueimp/load-image.min.js"></script>
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
+<script src="/assets/js/blueimp/canvas-to-blob.min.js"></script>
 
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
 <script src="/assets/js/jquery.iframe-transport.js"></script>
